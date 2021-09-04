@@ -2,6 +2,15 @@
 <p>Find me in app/views/blogs/new.html.erb</p>
 
 <h1>新規投稿</h1>
+
+<!--validation-->
+<% if @blog.errors.any? %>
+  <%= @blog.errors.count %>件のエラーが発生。
+  <% @blog.errors.full_messages.each do |m| %>
+    <%= m %>
+  <% end %>
+<% end %>
+
 <%= form_with model:@blog, local:true do |f| %>
 
   <h4>タイトル</h4>
