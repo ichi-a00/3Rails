@@ -1,2 +1,11 @@
-<h1>Blogs#edit</h1>
+<h1>編集しますか</h1>
+<%= form_with model:@blog, local:true do |fo| %>
+  <h4>タイトル？</h4>
+  <%= fo.text_field :title %>
+  <h4>カテゴリ？</h4>
+  <%= fo.text_field :category %>
+  <h4>本分？</h4>
+  <%= fo.text_area :body %>
+  <%= fo.submit '保存する' %>
+<% end %>
 <p>Find me in app/views/blogs/edit.html.erb</p>
